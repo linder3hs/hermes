@@ -1,0 +1,51 @@
+{
+  "name": "hermes",
+  "version": "0.1.0",
+  "description": "AI-powered project creation and improvement for web, mobile, desktop, and backend.",
+  "author": {
+    "name": "Hermes",
+    "url": "https://github.com/yourusername/hermes"
+  },
+  "skills": [
+    {
+      "name": "new-project",
+      "path": "skills/new-project/SKILL.md"
+    },
+    {
+      "name": "project-health",
+      "path": "skills/project-health/SKILL.md"
+    }
+  ],
+  "agents": [
+    {
+      "name": "hermes",
+      "path": "agents/hermes.md"
+    },
+    {
+      "name": "web-architect",
+      "path": "agents/web-architect.md"
+    },
+    {
+      "name": "ui-stylist",
+      "path": "agents/ui-stylist.md"
+    },
+    {
+      "name": "project-doctor",
+      "path": "agents/project-doctor.md"
+    }
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/session-init.js",
+            "timeout": 5,
+            "statusMessage": "Hermes initializing..."
+          }
+        ]
+      }
+    ]
+  }
+}

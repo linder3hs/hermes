@@ -22,7 +22,7 @@ Add to `~/.claude/settings.json`:
     "hermes": {
       "source": {
         "source": "github",
-        "repo": "yourusername/hermes"
+        "repo": "linder3hs/hermes"
       }
     }
   }

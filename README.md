@@ -14,7 +14,7 @@ AI-powered project creation system for Claude Code. Guides you from zero to prod
 
 ### Install
 
-Add to `~/.claude/settings.json`:
+Edit `~/.claude/settings.json` and add two entries:
 
 ```json
 {
@@ -25,11 +25,14 @@ Add to `~/.claude/settings.json`:
         "repo": "linder3hs/hermes"
       }
     }
+  },
+  "enabledPlugins": {
+    "hermes@hermes": true
   }
 }
 ```
 
-Then install via `/install-plugin hermes` in Claude Code.
+Then restart Claude Code. The SessionStart hook will activate automatically.
 
 ### Use
 

@@ -48,6 +48,14 @@ npm install [chosen services]@latest
 # tailwind.config.ts, globals.css, theme-provider, etc.
 ```
 
+## Agent Prompts
+
+Load these files for detailed decision logic:
+
+- [Hermes Orchestrator](agents/hermes.md) — context detection and routing
+- [Web Architect](agents/web-architect.md) — stack + services decision tree
+- [UI Stylist](agents/ui-stylist.md) — component library, theme, dark mode, fonts, icons
+
 ## Reference Files
 
 - [Web Stacks](references/web-stacks.md) — framework options and tradeoffs

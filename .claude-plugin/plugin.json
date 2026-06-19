@@ -1,39 +1,14 @@
 {
   "name": "hermes",
   "version": "0.1.0",
-  "description": "AI-powered project creation and improvement for web, mobile, desktop, and backend.",
+  "description": "AI-powered project creation and improvement system. Guides web project creation through a conversational decision tree — stack, services, UI style. Use /new-project to start from scratch or /project-health to analyze an existing project.",
   "author": {
-    "name": "Hermes",
-    "url": "https://github.com/yourusername/hermes"
+    "name": "linder3hs",
+    "url": "https://github.com/linder3hs"
   },
-  "skills": [
-    {
-      "name": "new-project",
-      "path": "skills/new-project/SKILL.md"
-    },
-    {
-      "name": "project-health",
-      "path": "skills/project-health/SKILL.md"
-    }
-  ],
-  "agents": [
-    {
-      "name": "hermes",
-      "path": "agents/hermes.md"
-    },
-    {
-      "name": "web-architect",
-      "path": "agents/web-architect.md"
-    },
-    {
-      "name": "ui-stylist",
-      "path": "agents/ui-stylist.md"
-    },
-    {
-      "name": "project-doctor",
-      "path": "agents/project-doctor.md"
-    }
-  ],
+  "homepage": "https://github.com/linder3hs/hermes",
+  "repository": "https://github.com/linder3hs/hermes",
+  "license": "MIT",
   "hooks": {
     "SessionStart": [
       {

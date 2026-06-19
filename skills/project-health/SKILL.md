@@ -29,6 +29,10 @@ Analyze an existing project, surface gaps, and offer targeted improvements. No t
 4. **Execute** — install, scaffold, configure the chosen improvements
 5. **Update CLAUDE.md** — add or create with current state
 
+## Agent Prompts
+
+- [Project Doctor](agents/project-doctor.md) — full analysis and improvement logic
+
 ## Reference Files
 
 - [Health Checklist](references/checklist.md) — what a production-ready project should have

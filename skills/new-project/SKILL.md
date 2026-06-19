@@ -129,7 +129,15 @@ npx shadcn@latest add card button input scroll-area badge avatar skeleton
 npx shadcn@latest add button badge card separator
 ```
 
-## Step 4 — Generate globals.css
+## Step 4 — Generate tailwind.config.ts and globals.css
+
+Read `skills/new-project/references/config-files.md` and generate BOTH files verbatim.
+
+**`tailwind.config.ts` is required.** Without it, `font-sans` won't map to Geist even if the package is installed. The config maps `var(--font-geist-sans)` → `font-sans` and `var(--font-geist-mono)` → `font-mono`. It also registers all custom keyframes and animations.
+
+Also generate `src/components/page-wrapper.tsx` from config-files.md and wrap every generated page with it.
+
+### Original step — Generate globals.css
 
 Replace `src/app/globals.css` with the full theme for the chosen color. Use the values below exactly.
 
@@ -247,7 +255,14 @@ Replace `src/app/globals.css` with the full theme for the chosen color. Use the 
 
 ## Step 5 — Generate app shell
 
-Read `skills/new-project/references/app-shells.md` and copy the files VERBATIM for the chosen project type. Do not simplify, do not abbreviate, do not skip any file. The shells in that reference are production-quality — use them exactly.
+Read `skills/new-project/references/app-shells.md` and copy the files VERBATIM for the chosen project type. Do not simplify, do not abbreviate, do not skip any file.
+
+Apply animations from `references/config-files.md`:
+- Wrap every page in `<PageWrapper>` for fade-in on load
+- Add stagger delay to grid cards: `style={{ animationDelay: \`${i * 60}ms\`, animationFillMode: 'both' }}`
+- Cards: add `transition-all duration-200 hover:shadow-md hover:-translate-y-0.5`
+- Sidebar links: add `hover:translate-x-0.5` to the transition
+- Buttons with important actions: add `active:scale-95`
 
 ### `src/lib/utils.ts`
 ```ts
@@ -786,9 +801,20 @@ npm run build 2>&1 | tail -5
 
 If it fails, fix type errors before finishing. Report the final file tree to the user.
 
+## Reference Files
+
+- [Web Stacks](references/web-stacks.md) — framework options and tradeoffs
+- [Presets](references/presets.md) — predefined stack combinations
+- [UI Options](references/ui-options.md) — component libraries, themes, dark mode
+- [Services](references/services.md) — auth, payments, email, storage, AI options
+- [App Shells](references/app-shells.md) — complete base files per project type
+- [Config Files](references/config-files.md) — tailwind.config.ts, globals.css HSL vars, animations, page-wrapper
+
 ## Rules
 
-- Generate every file in Steps 5–8. No exceptions, no skipping.
+- Generate every file in Steps 4–8. No exceptions, no skipping.
+- `tailwind.config.ts` is mandatory — font won't work without it.
+- Wrap every page in `<PageWrapper>` — animations won't fire without it.
 - Never leave `// TODO` in generated service files — either implement it or omit the feature.
 - Never run `git commit` — leave that to the user.
 - Always verify the build compiles before reporting done.

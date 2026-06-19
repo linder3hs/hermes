@@ -247,7 +247,7 @@ Replace `src/app/globals.css` with the full theme for the chosen color. Use the 
 
 ## Step 5 — Generate app shell
 
-Generate ALL of these files. Do not skip any. Do not leave TODOs.
+Read `skills/new-project/references/app-shells.md` and copy the files VERBATIM for the chosen project type. Do not simplify, do not abbreviate, do not skip any file. The shells in that reference are production-quality — use them exactly.
 
 ### `src/lib/utils.ts`
 ```ts

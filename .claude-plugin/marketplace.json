@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hermes",
+  "description": "AI-powered project creation and improvement system for Claude Code.",
+  "owner": {
+    "name": "linder3hs",
+    "url": "https://github.com/linder3hs"
+  },
+  "plugins": [
+    {
+      "name": "hermes",
+      "description": "Guide web project creation through a conversational decision tree — stack, services, UI style. /new-project to start from scratch, /project-health to analyze existing projects.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

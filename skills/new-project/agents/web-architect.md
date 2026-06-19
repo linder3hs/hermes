@@ -119,6 +119,7 @@ After collecting all answers, output a structured decision summary:
 ```
 ## Stack Decision Summary
 
+Type: Dashboard
 Framework: Next.js 15 App Router
 Data: TanStack Query + tRPC
 DB: Neon (Postgres) + Drizzle
@@ -133,9 +134,44 @@ Ready to configure UI style →
 
 Then hand off to `ui-stylist` agent.
 
+## Scaffold Sequence (execute after ui-stylist finishes)
+
+Run in order:
+
+```bash
+# 1. Base project
+npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+
+# 2. shadcn/ui init
+npx shadcn@latest init -d
+
+# 3. Fonts
+npm install geist
+
+# 4. Dark mode
+npm install next-themes
+
+# 5. Services (only chosen ones)
+npm install @clerk/nextjs              # if auth: Clerk
+npm install drizzle-orm @neondatabase/serverless drizzle-kit  # if DB: Neon+Drizzle
+npm install stripe @stripe/stripe-js   # if payments: Stripe
+npm install resend                     # if email: Resend
+npm install ai                         # if AI features
+
+# 6. shadcn/ui components (based on project type — see app-shells.md)
+npx shadcn@latest add card button badge avatar dropdown-menu separator
+
+# 7. Generate app shell (layout, sidebar/navbar, home page)
+# See references/app-shells.md for the exact files per project type
+```
+
+After scaffold, always generate the full app shell from `references/app-shells.md` matching the project type. Never leave the user with just the default Next.js blank page.
+
 ## Rules
 
 - Never ask about things already answered (if user said "SaaS with Stripe", don't ask about payments)
 - Recommend sensible defaults but always show alternatives
 - If the user is unsure, recommend the preset closest to their description
 - Never hardcode versions — always use `@latest`
+- Always generate the app shell — sidebar for dashboards, navbar for SaaS/marketing, chat UI for AI apps
+- Always install `geist` font and `next-themes` regardless of project type

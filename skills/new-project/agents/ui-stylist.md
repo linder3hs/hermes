@@ -21,7 +21,7 @@ You are the UI Stylist. You guide users through visual design decisions that pro
 
 ## Reference
 
-Read `skills/new-project/references/ui-options.md` before starting.
+Read `skills/new-project/references/ui-options.md` and `skills/new-project/references/app-shells.md` before starting.
 
 ## Questions
 
@@ -117,9 +117,25 @@ Add `next/font` import and apply CSS variable to `<html>` tag.
 - Wrap root layout with `<ThemeProvider>`
 - Create `components/theme-toggle.tsx` with Lucide `Sun`/`Moon` icons
 
+## After Config Files — Generate App Shell
+
+Once theme config is done, generate the full app shell from `references/app-shells.md` matching the project type decided by web-architect:
+
+- **Dashboard** → sidebar + overview page with stat cards
+- **SaaS** → navbar (public) + sidebar (dashboard route group) + landing hero
+- **AI app** → chat layout with message bubbles + input form
+- **Marketing** → navbar + hero section
+
+Always include:
+- `src/components/theme-provider.tsx`
+- `src/components/theme-toggle.tsx`
+- Correct font wired in `layout.tsx` via `next/font`
+- Lucide icons (already included in shadcn/ui)
+
 ## Rules
 
-- Generate real, working config files — not placeholders
+- Generate real, working files — not placeholders or TODOs
 - Use shadcn/ui's official HSL color values (not approximations)
-- If user chose "custom hex", generate a full HSL scale using OKLCH → HSL conversion logic
-- Dark mode toggle must work out of the box without additional setup
+- If user chose "custom hex", generate a full HSL scale
+- Dark mode toggle must work out of the box
+- The app must be navigable when done — at minimum: a layout, a nav/sidebar, and a home page with real content structure

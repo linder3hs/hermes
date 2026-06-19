@@ -62,3 +62,4 @@ Load these files for detailed decision logic:
 - [Presets](references/presets.md) — predefined stack combinations
 - [UI Options](references/ui-options.md) — component libraries, themes, dark mode
 - [Services](references/services.md) — auth, payments, email, storage, AI options
+- [App Shells](references/app-shells.md) — complete base files per project type (layout, sidebar/navbar, home page)

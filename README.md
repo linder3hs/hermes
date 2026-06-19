@@ -10,11 +10,9 @@ AI-powered project creation system for Claude Code. Guides you from zero to prod
 
 **On session start**, Hermes auto-detects your context and tells you what to run next.
 
-## Quick Start
+## Install
 
-### Install
-
-Edit `~/.claude/settings.json` and add two entries:
+**1. Add to `~/.claude/settings.json`:**
 
 ```json
 {
@@ -32,17 +30,23 @@ Edit `~/.claude/settings.json` and add two entries:
 }
 ```
 
-Then restart Claude Code. The SessionStart hook will activate automatically.
+> If `extraKnownMarketplaces` or `enabledPlugins` already exist in your file, just add the `"hermes"` entries inside them.
 
-### Use
+**2. Restart Claude Code** (exit and run `claude` again in your terminal).
+
+On next startup the plugin downloads automatically. You'll see `Hermes initializing...` in the status and `/new-project` + `/project-health` will be available as slash commands.
+
+## Usage
 
 ```
-/new-project              # Full guided flow
-/new-project saas         # Skip tree, use preset
-/project-health           # Audit existing project
+/new-project              # Full guided flow — asks about stack, services, UI
+/new-project saas         # Skip the tree, use a preset
+/project-health           # Analyze and improve an existing project
 ```
 
 ## Presets
+
+Skip the full decision tree with a named preset:
 
 | Preset | Stack |
 |--------|-------|
@@ -52,7 +56,7 @@ Then restart Claude Code. The SessionStart hook will activate automatically.
 | `dashboard` | + TanStack Query + tRPC + Neon/Drizzle |
 | `marketing` | Astro + Tailwind + shadcn/ui + Resend |
 
-Each preset still runs the UI stylist: choose your color theme, dark mode, font, and icon set.
+Each preset still runs the UI stylist — pick your color theme, dark mode, font, and icon set.
 
 ## Web Stack Coverage
 
